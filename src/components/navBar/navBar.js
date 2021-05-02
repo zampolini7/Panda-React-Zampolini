@@ -1,5 +1,5 @@
 import '../navBar/navBar.scss';
-import { IconNavBar } from '../iconNavbar/iconNavbar'
+import { CartWidget } from '../cartWidget/cartWidget'
 
 export const NavBar = () => {
     return(
@@ -34,7 +34,7 @@ export const NavBar = () => {
                             
                         <div className="dropdown " href="#carrito">
                           <button className="btn .bg-gradient-light  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <IconNavBar/>
+                            <CartWidget/>
                           </button>
                         </div>
                         <div id="carrito2" className="dropdown-menu  " aria-labelledby="dropdownMenu2">

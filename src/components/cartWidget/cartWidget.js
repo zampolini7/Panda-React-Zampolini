@@ -1,7 +1,7 @@
 import  Carrito  from '../../img/carrito.png'
-import '../iconNavbar/iconNavbar.scss'
+import './cartWidget.scss'
 
-export const IconNavBar = () => {
+export const CartWidget = () => {
     return (
         <img src={Carrito} alt="Img Carrito" className="iconNavBar"/>
     )
