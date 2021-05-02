@@ -1,4 +1,5 @@
-
+import '../navBar/navBar.scss';
+import { IconNavBar } from '../iconNavbar/iconNavbar'
 
 export const NavBar = () => {
     return(
@@ -25,10 +26,6 @@ export const NavBar = () => {
                       <li className="nav-item">
                         <a className="nav-link" href="#contacto">Contacto</a>
                       </li>
-                      
-                      
-                      
-                        
                     
                     </ul>
                   </div>
@@ -37,7 +34,7 @@ export const NavBar = () => {
                             
                         <div className="dropdown " href="#carrito">
                           <button className="btn .bg-gradient-light  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CARRITO
+                            <IconNavBar/>
                           </button>
                         </div>
                         <div id="carrito2" className="dropdown-menu  " aria-labelledby="dropdownMenu2">
