@@ -1,6 +1,7 @@
 import './App.css'; 
 import { NavBar } from './components/navBar/navBar';
 import { List } from './components/list/list';
+import { ItemCount } from './components/itemCount/itemCount';
 
 function App() {
  const boxes = [{"id": 1,"nombre": "DeliBox","precio": 3650,"contenido": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.","img": "images1/delimeats1.jpeg","cantidad": 1}, 
@@ -19,6 +20,8 @@ function App() {
     <div>
       <NavBar />
       <List product ={boxes} />
+      <ItemCount List= {boxes.cantidad}/>
+
     </div>
 
 
