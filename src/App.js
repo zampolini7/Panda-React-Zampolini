@@ -4,6 +4,7 @@ import { List } from './components/itemList/itemList';
 import { ItemCount } from './components/itemCount/itemCount';
 // import { BtnCargaAsync } from './components/btnCargaAsync/btnCargaAsync'
 import { BtnCargaNew } from './components/btnCargaAsync/btnCargaNew'
+import { Prueba } from './components/ComponentePrueba/Prueba'
 
 
 
@@ -32,6 +33,8 @@ function App() {
       
       < BtnCargaNew item ={boxes} />
       <List item ={boxes} className=""/>
+
+      < Prueba propiedades = {boxes}/>
 
       <ItemCount />
 
