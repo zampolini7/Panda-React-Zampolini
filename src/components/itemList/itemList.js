@@ -1,7 +1,7 @@
-import { Item } from '../item/item'
+import Item from '../item/';
 
 export const List = (props) => {
-    return props.item.map(
+    return props.items.map(
         (item) => (
            <Item
            id = {item.title}
