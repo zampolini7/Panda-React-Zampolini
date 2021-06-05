@@ -1,14 +1,32 @@
 import Item from '../item/';
+import './itemList.css'
 
-export const List = (props) => {
-    return props.items.map(
-        (item) => (
-           <Item
-           id = {item.title}
-           nombre = {item.nombre}
-           precio = {item.precio}
-           contenido = {item.contenido}
-           cantidad = {item.cantidad}
-           />
-         ))
+export const List = ({items, Loading}) => {
+    return (
+      <div>
+        
+        <div className="d-flex justify-content-center row divContainer">
+        {Loading ? 
+                <h2> Estamos cargando tus items 😀  </h2>
+                
+             :(items.map(
+                (item) => (
+                  <Item
+                  id = {item.id}
+                  title= {item.title}
+                  price = {item.price}
+                  description = {item.description}
+                  stock = {item.stock}
+                  imageId = {item.imageId}
+                  
+                  />
+                  
+                ))
+            )}
+        
+        </div>
+         
+      </div>
+      )
+      
 }

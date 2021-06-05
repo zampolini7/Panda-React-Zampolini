@@ -1,14 +1,16 @@
-import '../navBar/navBar.scss';
+import '../navBar/navBar.css';
 import { CartWidget } from '../cartWidget/cartWidget'
+import {NavLink} from 'react-router-dom'
+
 
 export const NavBar = () => {
     return(
-        <div className="App container">
-            <header className="App-header row">
+        <div className="App container ">
+            
               
               <nav className="container navbar navbar-expand-lg navbar-light  d-flex fixed-top navBarPanda ">
 
-                  <a className="navbar-brand navBarPanda " href="#home">PANDA</a>
+                  <a className="navbar-brand navBarPanda " href="#home"> <NavLink exact to={'/'} activeClassName="active-navlink" className="navlink"> PANDA </NavLink> </a>
                   <button className="navbar-toggler navBarPanda " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon navBarPanda "></span>
                   </button>
@@ -17,14 +19,14 @@ export const NavBar = () => {
                     <ul className="navbar-nav">
                     
                       <li className="nav-item">
-                        <a className="nav-link" href="#quees">¿Qué es una giftbox?</a>
+                        <a className="nav-link" href="#quees"><NavLink to={'/fruit'}  activeClassName="active-navlink" className="navlink"> Fruit </NavLink></a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="#productosContainer">Productos</a>
+                        <a className="nav-link" href="#productosContainer"><NavLink to={'/items'}  activeClassName="active-navlink" className="navlink"> items </NavLink></a>
                       </li>
             
                       <li className="nav-item">
-                        <a className="nav-link" href="#contacto">Contacto</a>
+                        <a className="nav-link" href="#contacto"><NavLink to={'/contacto'}  activeClassName="active-navlink" className="navlink"> Contacto </NavLink></a>
                       </li>
                     
                     </ul>
@@ -34,7 +36,7 @@ export const NavBar = () => {
                             
                         <div className="dropdown " href="#carrito">
                           <button className="btn .bg-gradient-light  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <CartWidget/>
+                          <NavLink to={'/carrito'}  activeClassName="active-navlink" className="navlink"> <CartWidget/>  </NavLink>
                           </button>
                         </div>
                         <div id="carrito2" className="dropdown-menu  " aria-labelledby="dropdownMenu2">
@@ -45,12 +47,17 @@ export const NavBar = () => {
                     </div>
               </nav>   
 
-              <p>
-                Bienvenidos perritos malvados
-              </p>
+             
               
-            </header>
+       
         </div>
      
     )
   }
+
+
+   
+//   <header className="App-header row">
+//   <p>Bienvenidos perritos malvados</p>
+// </header>
+  
