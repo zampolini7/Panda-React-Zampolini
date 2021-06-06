@@ -8,6 +8,7 @@ import { Items } from './pages/items'
 import { Fruit } from './pages/fruits'
 import '../src/img/delimeats1.jpeg'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import {itemsContext} from './context/itemsContext';
 
 // import {ItemDetailContainer} from './containers/itemDetailconteiner/itemDetailContainer'
 
@@ -24,8 +25,7 @@ function App() {
         </Route>
 
         <Route path='/items/:itemsId'>
-         <Items />
-
+            <Items />
         </Route>
         <Route path='/carrito'>
          <Carrito />

@@ -1,9 +1,10 @@
 import './item.css'
+import {Link} from 'react-router-dom';
 
 
 
 export const Item = (props) => {
-   
+   console.log("items props", props)
 
     return(
 
@@ -15,7 +16,7 @@ export const Item = (props) => {
                 
                 <p> {props.description}</p>
                 
-                <button  >  Ver más</button>
+                <Link to={`/items/${props.id}`}> Ver mas</Link>
                 
                 <a id={props.id} class="btn text-light bg-dark d-flex justify-content-center btnComprar">
                         Agregar al carrito x {props.price}

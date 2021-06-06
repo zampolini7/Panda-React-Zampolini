@@ -2,6 +2,7 @@ import Item from '../item/';
 import './itemList.css'
 
 export const List = ({items, Loading}) => {
+  console.log("list recevied", items);
     return (
       <div>
         

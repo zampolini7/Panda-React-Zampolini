@@ -10,7 +10,7 @@ export const NavBar = () => {
               
               <nav className="container navbar navbar-expand-lg navbar-light  d-flex fixed-top navBarPanda ">
 
-                  <a className="navbar-brand navBarPanda " href="#home"> <NavLink exact to={'/'} activeClassName="active-navlink" className="navlink"> PANDA </NavLink> </a>
+                  <NavLink exact to={'/'} activeClassName="active-navlink" className="navlink"> PANDA </NavLink>
                   <button className="navbar-toggler navBarPanda " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon navBarPanda "></span>
                   </button>
@@ -19,14 +19,14 @@ export const NavBar = () => {
                     <ul className="navbar-nav">
                     
                       <li className="nav-item">
-                        <a className="nav-link" href="#quees"><NavLink to={'/fruit'}  activeClassName="active-navlink" className="navlink"> Fruit </NavLink></a>
+                        <div className="nav-link" href="#quees"><NavLink to={'/fruit'}  activeClassName="active-navlink" className="navlink"> Fruit </NavLink></div>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="#productosContainer"><NavLink to={'/items'}  activeClassName="active-navlink" className="navlink"> items </NavLink></a>
+                        <NavLink to={'/items'}  activeClassName="active-navlink" className="navlink"> items </NavLink>
                       </li>
             
                       <li className="nav-item">
-                        <a className="nav-link" href="#contacto"><NavLink to={'/contacto'}  activeClassName="active-navlink" className="navlink"> Contacto </NavLink></a>
+                        <div className="nav-link" href="#contacto"><NavLink to={'/contacto'}  activeClassName="active-navlink" className="navlink"> Contacto </NavLink></div>
                       </li>
                     
                     </ul>
