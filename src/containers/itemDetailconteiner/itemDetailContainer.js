@@ -2,7 +2,7 @@ import { useState  } from 'react'
 import {ItemDetail} from '../../components/itemDetail/itemDetail'
 import {itemList} from '../../assets/constants'
 
-export const ItemDetailContainer = ()=>{
+export const ItemDetailContainer = ({item})=>{
     const [detail, setDetail] = useState([]);
 
         const handleClick = async () => {
@@ -15,17 +15,16 @@ export const ItemDetailContainer = ()=>{
           const getProducts = async () => {
             return itemList[0];
         };
-        
+        console.log(item)
 
 
     return(
         <div>
-            <h2>Bienvenidos al contenedor del detalle</h2>
-            <button onClick={handleClick} className="btn-detail"> Presiona para más info </button>
+            
           
       
 
-            <ItemDetail item={detail} />    
+            <ItemDetail item={item} />    
 
             
 

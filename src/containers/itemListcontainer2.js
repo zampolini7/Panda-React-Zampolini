@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 
+import {itemsContext} from '../context/itemsContext';
 import { List } from '../components/itemList/itemList';
 import {getFirestore} from '../firebase/index'
 import './itemListC.css'
@@ -9,6 +10,7 @@ export const ItemListContainer2 = ()=>{
    
     const [items, setItems] = useState([])
     const [Loading, setLoading] = useState(true);
+    const {test} = useContext(itemsContext);
 
     
     useEffect(() => {
@@ -20,7 +22,13 @@ export const ItemListContainer2 = ()=>{
                 if(querySnapshot.size === 0){
                     setLoading(true)
                 }
-                setItems(querySnapshot.docs.map((doc)=>doc.data()))
+                const firebaseItems = [];
+                for (let doc of querySnapshot.docs){
+                    firebaseItems.push({id: doc.id, ...doc.data()});
+                }
+                setItems(firebaseItems)
+                test(firebaseItems);
+
                 setLoading (false)
             }
         ).catch(

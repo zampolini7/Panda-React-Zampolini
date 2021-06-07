@@ -10,15 +10,15 @@ export const ItemDetail = ({item})=> {
                     
 
                     <div className="itemDetail-div">
-                        <img src="C:\Users\nicoz\Desktop" alt="" className="itemDetail-img" /> 
+                        <img src={item.imageId} alt="" className="itemDetail-img" /> 
                         
                         <div className="itemDetail-div-Lateral">
-                            <h2 className="itemDetail-h2"> Nombre : {item.nombre} </h2>
-                            <p className="itemDetail-div-Lateral-p"> Contenido: {item.contenido} </p>
+                            <h2 className="itemDetail-h2"> Nombre : {item.title} </h2>
+                            <p className="itemDetail-div-Lateral-p"> Contenido: {item.description} </p>
 
                             <div className="itemDetail-div-lateral-bajo">
-                                <p className="itemDetail-div-bajo-p"> Precio:  {item.precio} </p>
-                                <p className="itemDetail-div-bajo-p">Cantidad: {item.cantidad} </p>
+                                <p className="itemDetail-div-bajo-p"> Precio:  {item.price} </p>
+                                <p className="itemDetail-div-bajo-p">Cantidad: {item.stock} </p>
 
                                 <button className="btn-detail">Comprar ahora </button>
                                 

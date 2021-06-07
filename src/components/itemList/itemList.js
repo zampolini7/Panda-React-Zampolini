@@ -1,7 +1,12 @@
 import Item from '../item/';
 import './itemList.css'
+import {CartContext} from '../../context/cartContext'
+import {useContext} from 'react'
 
 export const List = ({items, Loading}) => {
+  const {addToCart} = useContext(CartContext)
+ 
+  console.log("list recevied", items);
     return (
       <div>
         
@@ -19,6 +24,8 @@ export const List = ({items, Loading}) => {
                   description = {item.description}
                   stock = {item.stock}
                   imageId = {item.imageId}
+                  onAdd ={()=>  addToCart(item)}
+
                   
                   />
                   

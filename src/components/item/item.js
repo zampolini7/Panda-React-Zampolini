@@ -1,25 +1,26 @@
 import './item.css'
+import {Link} from 'react-router-dom';
 
 
 
-export const Item = (props) => {
-   
+export const Item = ({imageId, title, id, price, description, onAdd}) => {
+   console.log("items" )
 
     return(
 
         <div class="card col-3  d-flex m-2">
 
-            <img class="card-img-top" src={props.imageId} alt="Card image cap"/>
+            <img class="card-img-top" src={imageId} alt="Card image cap"/>
             <div class="card-body">
-                <h5  class="card-title"> {props.title}</h5>
+                <h5  class="card-title"> {title}</h5>
                 
-                <p> {props.description}</p>
+                <p> {description}</p>
                 
-                <button  >  Ver más</button>
+                <Link to={`/items/${id}`}> Ver mas</Link>
                 
-                <a id={props.id} class="btn text-light bg-dark d-flex justify-content-center btnComprar">
-                        Agregar al carrito x {props.price}
-                </a>
+                <button onClick={onAdd} id={id} class="btn text-light bg-dark d-flex justify-content-center btnComprar">
+                        Agregar al carrito x {price}
+                </button>
                 <p></p>
             </div>
 
@@ -34,7 +35,7 @@ export const Item = (props) => {
 }
 
 
-// {verMas > []? ( <p> {props.nombre}</p>): ('')
+// {verMas > []? ( <p> {nombre}</p>): ('')
             
             
 // }

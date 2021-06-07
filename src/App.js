@@ -9,29 +9,29 @@ import { Fruit } from './pages/fruits'
 import '../src/img/delimeats1.jpeg'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
+
 // import {ItemDetailContainer} from './containers/itemDetailconteiner/itemDetailContainer'
 import { CartContext } from './context/cartContext'
 import { useContext } from 'react'
 
 
 function App() {
-  const cart = useContext(CartContext);
-  console.log('aca tan los produto', cart);
+  const {quantity} = useContext(CartContext);
+  console.log('aca tan los produto', quantity);
   
     
     
   
   return (
     <BrowserRouter>
-      <NavBar cartQuantity= {cart.length} />      
+      <NavBar cartQuantity= {quantity} />      
       <Switch>
         <Route exact path='/'>
           <Home/>       
         </Route>
 
         <Route path='/items/:itemsId'>
-         <Items />
-
+            <Items />
         </Route>
         <Route path='/carrito'>
          <Carrito />
