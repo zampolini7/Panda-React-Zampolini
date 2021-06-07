@@ -10,14 +10,20 @@ import '../src/img/delimeats1.jpeg'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 // import {ItemDetailContainer} from './containers/itemDetailconteiner/itemDetailContainer'
-
+import { CartContext } from './context/cartContext'
+import { useContext } from 'react'
 
 
 function App() {
+  const cart = useContext(CartContext);
+  console.log('aca tan los produto', cart);
+  
+    
+    
   
   return (
     <BrowserRouter>
-      <NavBar />      
+      <NavBar cartQuantity= {cart.length} />      
       <Switch>
         <Route exact path='/'>
           <Home/>       

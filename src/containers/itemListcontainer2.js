@@ -1,17 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import { BtnCarga2 } from '../components/btnCarga/btnCarga2'
 
 import { List } from '../components/itemList/itemList';
 import {getFirestore} from '../firebase/index'
+import './itemListC.css'
+
 
 export const ItemListContainer2 = ()=>{
-    
+   
     const [items, setItems] = useState([])
     const [Loading, setLoading] = useState(true);
 
-    // const HandleClick= ()=>{
-        
-    // }
     
     useEffect(() => {
         
@@ -34,8 +32,8 @@ export const ItemListContainer2 = ()=>{
 
     return(
         <div >
-            {/* <BtnCarga2 accion={HandleClick} /> */}
-            <List items={items} Loading = {Loading} />
+            <List items={items} Loading = {Loading}  />
+           
         </div>
     )
 }

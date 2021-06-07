@@ -3,7 +3,7 @@ import { CartWidget } from '../cartWidget/cartWidget'
 import {NavLink} from 'react-router-dom'
 
 
-export const NavBar = () => {
+export const NavBar = ({cartQuantity = 0}) => {
     return(
         <div className="App container ">
             
@@ -36,7 +36,11 @@ export const NavBar = () => {
                             
                         <div className="dropdown " href="#carrito">
                           <button className="btn .bg-gradient-light  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <NavLink to={'/carrito'}  activeClassName="active-navlink" className="navlink"> <CartWidget/>  </NavLink>
+                            <NavLink to={'/carrito'}  activeClassName="active-navlink" className="navlink"> 
+                          
+                              <CartWidget />  
+                              ( {cartQuantity})
+                            </NavLink>
                           </button>
                         </div>
                         <div id="carrito2" className="dropdown-menu  " aria-labelledby="dropdownMenu2">

@@ -6,8 +6,9 @@ export const List = ({items, Loading}) => {
       <div>
         
         <div className="d-flex justify-content-center row divContainer">
+          
         {Loading ? 
-                <h2> Estamos cargando tus items 😀  </h2>
+                <h2> Estamos cargando tus items 😀  </h2 >
                 
              :(items.map(
                 (item) => (
