@@ -1,7 +1,11 @@
 .Container-div-ItenCount{
-    display: grid;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    align-self: flex-end;
     // border: 2px solid green;
+    width: 40vw;
+    height: 10vh;
     .Container-p-ItenCount{
         display: grid;
         justify-self: center;
@@ -35,6 +39,7 @@
         background-color: rgb(89, 114, 131);
         color: white;
         height: 40px;
+        width: 200px;
     }
     
 

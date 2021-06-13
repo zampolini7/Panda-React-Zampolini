@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 
 
-export const Item = ({imageId, title, id, price, description, onAdd}) => {
+export const Item = ({imageId, title, id, price, description, onAdd, RemoveFromCart, ClearCart}) => {
    console.log("items" )
 
     return(
@@ -21,7 +21,12 @@ export const Item = ({imageId, title, id, price, description, onAdd}) => {
                 <button onClick={onAdd} id={id} class="btn text-light bg-dark d-flex justify-content-center btnComprar">
                         Agregar al carrito x {price}
                 </button>
-                <p></p>
+                <button onClick={RemoveFromCart} id={id} class="btn text-light bg-dark d-flex justify-content-center btnComprar">
+                        Eliminar del carrito
+                </button>
+                {/* <button onClick={ClearCart} id={id} class="btn text-light bg-dark d-flex justify-content-center btnComprar">
+                        Eliminar todo el carrito
+                </button> */}
             </div>
 
             

@@ -11,13 +11,16 @@
 }
 
 .navlink{
-    background-color: blueviolet;
-    color: wheat;
+    background-color: #e6c4b1 ;
+    color: white;
 
 }
 
 .active-navlink{
-    background-color: red;
-    color: wheat;
+    background-color: rgb(89, 114, 131);
+    color: white;
+    height: 2em;
+    width: 6em;
+    border-radius: 5px;
 
 }

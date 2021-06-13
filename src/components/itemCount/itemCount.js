@@ -20,7 +20,7 @@ export const ItemCount = (props) => {
     return(
 
         <div className="Container-div-ItenCount">
-            <p className="Container-p-ItenCount"> PRODUCTO X - Stock: {stock}</p>
+            {/* <p className="Container-p-ItenCount"> PRODUCTO X - Stock: {stock}</p> */}
             <div className="Container-ItemCount">
                 <button className="btn-ItemCount" onClick={restar}>  
                     <p> - </p> 

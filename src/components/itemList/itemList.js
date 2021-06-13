@@ -4,7 +4,7 @@ import {CartContext} from '../../context/cartContext'
 import {useContext} from 'react'
 
 export const List = ({items, Loading}) => {
-  const {addToCart} = useContext(CartContext)
+  const {addToCart, RemoveFromCart, Clear} = useContext(CartContext)
  
   console.log("list recevied", items);
     return (
@@ -25,7 +25,8 @@ export const List = ({items, Loading}) => {
                   stock = {item.stock}
                   imageId = {item.imageId}
                   onAdd ={()=>  addToCart(item)}
-
+                  RemoveFromCart = {()=>RemoveFromCart(item)}
+                  ClearCart = {()=>Clear ()}
                   
                   />
                   
