@@ -9,8 +9,29 @@ export const CartProvider = ({children})=>{
     const [quantity, setQuantity] = useState(0);
 
     const addToCart = (item ) =>{
-        isInCart(item)
-        setCart([...cart, (item)])
+        console.log('ESTE ES EL POSTA',cart);
+        let emptyCart= cart.length > 0
+        let found = -1
+        if (cart.length > 0) {
+          found= cart.findIndex(e => e.id=== item.id );
+          console.log('Este es el found wa8', found, 'Este es el puto length',cart.length);
+            
+        }
+
+        if (found >= 0) {
+            let cartTemp= cart
+            cartTemp[found].quantity= cartTemp[found].quantity + 1
+
+            setCart(cartTemp)
+            
+        } else {
+            let cartTemp = cart
+            cartTemp.push(item)
+            setCart(cartTemp)
+            setQuantity(cart.length)
+        }
+  
+      
         console.log('este es nuevo carrito', cart)
     }
 
@@ -30,23 +51,23 @@ export const CartProvider = ({children})=>{
     }
 
     
-    const isInCart = (itemId)=>{
-        if (itemId.id === cart.id) {
+    const isInCart = (item)=>{
+        if (item.id === cart.id) {
             
-            setCart(...cart, (itemId.Quantity))
+            setCart(...cart, (item.Quantity))
             
         } else {
-            setCart([...cart, (itemId)])
+            setCart([...cart, (item)])
     }
             
         
     }
 
-    useEffect(() => {
-       setQuantity(cart.length)
-    //    console.log('Este es el console log que quier saber', cart);
-    //    console.log('aca va la cuant', quantity)
-    }, [cart]);
+    // useEffect(() => {
+    //    setQuantity(cart.length)
+    // //    console.log('Este es el console log que quier saber', cart);
+    // //    console.log('aca va la cuant', quantity)
+    // }, [cart]);
 
     console.log(cart);
 
