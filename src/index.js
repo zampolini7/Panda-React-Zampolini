@@ -12,9 +12,9 @@ import {ItemsProvider} from './context/itemsContext';
 ReactDOM.render(
   <React.StrictMode>
     <CartProvider >
-    <ItemsProvider>  
-      <App />
-    </ItemsProvider> 
+      <ItemsProvider>  
+        <App />
+      </ItemsProvider> 
     </CartProvider>
 
     

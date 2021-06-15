@@ -12,7 +12,19 @@ export const Carrito =()=>{
     console.log('EL CARRITO', cart)
 
     const canBuy =(stock, quantity)=>{
-        return stock>= quantity
+        return stock >= quantity
+    }
+
+    const ordenes = {
+        '213ab1':{
+            nombre: "Mati",
+            apellido: "Mir",
+            edad: 23,
+            items: [
+                item1,
+                item2
+            ]
+        }
     }
 
 
@@ -20,13 +32,18 @@ export const Carrito =()=>{
     const handleFinish=()=>{
         const db = getFirestore()
         const batch= db.batch()
+        
 
         cart.forEach((item) => {
-            const itemSelected = db.collection('items').doc(item.id)
+            const itemSelected = db.collection('items').doc(item.id);
+            const orderRef = db.collection('order').doc();
             if (canBuy(item.stock, item.quantity)) {
-                batch.update(itemSelected, {stock: item.stock - item.quantity})
+                batch.update(itemSelected, {stock: item.stock - item.quantity});
+                batch.set(orderRef, {
+
+                });
                 
-            }else{
+            } else{
                 alert(`${item.tile} ya no se encuentra con ese stock, stock actual: ${item.stock}`)
             }
             
@@ -63,9 +80,9 @@ export const Carrito =()=>{
                         Eliminar todo el carrito
             </button>
 
-            <button onClick={handleFinish}>
+            <button >
                 <Link> 
-                    <FinDeCompra/>
+                    <FinDeCompra onClick={handleFinish}/>
                 </Link>
                Finalizar la compra
            </button>

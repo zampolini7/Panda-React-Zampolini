@@ -1,9 +1,12 @@
-import { useState  } from 'react'
-import {ItemDetail} from '../../components/itemDetail/itemDetail'
-import {itemList} from '../../assets/constants'
+import { useState, useContext  } from 'react';
+import {ItemDetail} from '../../components/itemDetail/itemDetail';
+import {itemList} from '../../assets/constants';
+import { CartContext } from '../../context/cartContext';
 
 export const ItemDetailContainer = ({item})=>{
     const [detail, setDetail] = useState([]);
+    const {addToCart, RemoveFromCart, Clear} = useContext(CartContext);
+
 
         const handleClick = async () => {
             console.log('Esto ta to gucci');
@@ -19,15 +22,8 @@ export const ItemDetailContainer = ({item})=>{
 
 
     return(
-        <div>
-            
-          
-      
-
-            <ItemDetail item={item} />    
-
-            
-
+        <div>          
+            <ItemDetail item={item} addToCart={addToCart}  removeToCart={RemoveFromCart}/>               
         </div>
 
     )

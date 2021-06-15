@@ -2,19 +2,19 @@
 import '../itemCount/itemCount.scss'
 import {useState} from 'react'
 
-export const ItemCount = (props) => {
-    const [contador, setContador] = useState(0)
+export const ItemCount = ({item, addToCart}) => {
+    const [cantidad, setcantidad] = useState(0)
 
-    const stock = 15
+    const stock = item.stock;
 
     const sumar = ()=>{
-        if (contador >= stock ) return;
-        setContador (contador + 1)
+        if (cantidad >= stock ) return;
+        setcantidad (cantidad + 1)
     }
 
     const restar = ()=>{
-        if (contador < 1) return;
-        setContador  (contador -1)
+        if (cantidad < 1) return;
+        setcantidad  (cantidad -1)
     }
 
     return(
@@ -25,14 +25,17 @@ export const ItemCount = (props) => {
                 <button className="btn-ItemCount" onClick={restar}>  
                     <p> - </p> 
                 </button>
-                <p className="p-ItemCount"> {contador}</p>
+                <p className="p-ItemCount"> {cantidad}</p>
                 <button className="btn-ItemCount" onClick={sumar}> 
                     <p> + </p> 
                 </button>
                 
 
             </div>
-            <button className="btn-agregar">  Agregar al carrito</button>
+            <button className="btn-agregar" onClick={() => {                
+                addToCart(item, cantidad);
+                setcantidad(0);
+                }}>  Agregar al carrito</button>
         </div>
     )
 }

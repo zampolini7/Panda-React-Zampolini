@@ -1,21 +1,21 @@
 import './itemDetail.css'
 import { ItemCount } from '../itemCount/itemCount'
 
-export const ItemDetail = ({item})=> {
+export const ItemDetail = ({item, addToCart, removeFromCart})=> {
 
     return (
         <div>
-            {ItemDetail >[]? (
+            {item > [] ? (
 
                 <div className="item-container">
                     
 
                     <div className="itemDetail-div">
                         <div className="itemDetail-div-lateral-bajo">
-                            <img src={item.imageId} alt="" className="itemDetail-img" /> 
+                            <img src={item?.imageId} alt="" className="itemDetail-img" /> 
                             <div className="container-itemDetail-div-bajo-p">
-                                <p className="itemDetail-div-bajo-p"> Precio:  {item.price} </p>
-                                <p className="itemDetail-div-bajo-p">Cantidad: {item.stock} </p>
+                                <p className="itemDetail-div-bajo-p"> Precio:  {item?.price} </p>
+                                <p className="itemDetail-div-bajo-p">Cantidad: {item?.stock} </p>
 
                             </div>
 
@@ -23,10 +23,10 @@ export const ItemDetail = ({item})=> {
                             
                         </div>
                         <div className="itemDetail-div-Lateral">
-                            <h2 className="itemDetail-h2"> Nombre : {item.title} </h2>
-                            <p className="itemDetail-div-Lateral-p"> Contenido: {item.description} </p>
+                            <h2 className="itemDetail-h2"> Nombre : {item?.title} </h2>
+                            <p className="itemDetail-div-Lateral-p"> Contenido: {item?.description} </p>
 
-                            <ItemCount classname="itemDetail-itemCount"stock={item.stock}/>
+                            <ItemCount classname="itemDetail-itemCount" item={item} stock={item?.stock} addToCart={addToCart} removeFromCart={removeFromCart}/>
                         </div>
 
                     </div>
@@ -34,7 +34,7 @@ export const ItemDetail = ({item})=> {
 
                 </div>
 
-            ): ('trayendo info')}
+            ) : (<>Trayendo info</>)}
         </div>
     )
 

@@ -1,7 +1,7 @@
 import {Input} from '../components/input/input'
 import {useState, useEffect} from 'react'
 
-export const FinDeCompra =()=>{
+export const FinDeCompra = (props)=>{
     
     const [form, setForm] = useState({
         name:'',
@@ -35,11 +35,7 @@ export const FinDeCompra =()=>{
     const handleForm = (id, value)=>{
         const newForm = {...form, [id]:value}
         setForm(newForm)
-        }
-
-    const handleSubmit= ()=>{
-        alert(`your name is ${form.name} ${form.surname}, and you have ${form.age} years  `);
-    }   
+    }
 
 
     useEffect(() => {
@@ -52,7 +48,7 @@ export const FinDeCompra =()=>{
 
             {
                 formFields.map (
-                    ({id, label, value})=>(
+                    ({id, label, value })=>(
                     <Input 
                         key={id} 
                         id= {id} 
@@ -65,7 +61,7 @@ export const FinDeCompra =()=>{
             }
 
             {
-                <button disabled={isDisabledButon} onClick={handleSubmit}> 
+                <button disabled={isDisabledButon} onClick={() => props.handleFinish(form)}> 
                     Hacer compra
                 </button>
             }

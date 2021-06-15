@@ -8,10 +8,11 @@ export const CartProvider = ({children})=>{
     const [cart, setCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
 
-    const addToCart = (item ) =>{
+    const addToCart = ( item, quantity = 1 ) =>{
         console.log('ESTE ES EL POSTA',cart);
         let emptyCart= cart.length > 0
         let found = -1
+
         if (cart.length > 0) {
           found= cart.findIndex(e => e.id=== item.id );
           console.log('Este es el found wa8', found, 'Este es el puto length',cart.length);
@@ -20,12 +21,13 @@ export const CartProvider = ({children})=>{
 
         if (found >= 0) {
             let cartTemp= cart
-            cartTemp[found].quantity= cartTemp[found].quantity + 1
+            cartTemp[found].quantity= cartTemp[found].quantity + quantity
 
             setCart(cartTemp)
             
         } else {
             let cartTemp = cart
+            item.quantity = quantity
             cartTemp.push(item)
             setCart(cartTemp)
             setQuantity(cart.length)
@@ -34,6 +36,7 @@ export const CartProvider = ({children})=>{
       
         console.log('este es nuevo carrito', cart)
     }
+
 
     const RemoveFromCart = (itemId) =>{
         const newCart= cart.filter(item => item.id !== itemId.id)
